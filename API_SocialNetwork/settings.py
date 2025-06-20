@@ -53,6 +53,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+   'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,7 +61,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'API_SocialNetwork.urls'
 
@@ -82,6 +85,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'API_SocialNetwork.wsgi.application'
 
+AUTH_USER_MODEL = 'users.UserProfile'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
